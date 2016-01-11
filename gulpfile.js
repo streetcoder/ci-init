@@ -118,14 +118,9 @@ gulp.task('fonts', function() {
 // any update of scripts, stylesheet, fonts or images
 gulp.task('watch', function()
 {
-    /*browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });*/
 
     browserSync.init({
-        proxy: "dgdp-app.dev"
+        proxy: "" // add virtual host name
     });
 
 
