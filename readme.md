@@ -16,7 +16,7 @@ ci-init is a starter development environment for codeigniter 3 based on HTML5 Bo
 
 #Installation
 
-1. `git clone`
+1. `git clone https://github.com/streetcoder/ci-init.git`
 2. open the termonal and run `npm install`
 3. then run `bower install`
 4. and `gulp`
