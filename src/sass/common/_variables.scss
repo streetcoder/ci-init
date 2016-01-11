@@ -1,0 +1,37 @@
+// font path
+$icon-font-path:        "../fonts/";
+
+// theme color
+$brand-color-army:        #EA332F;
+$brand-color-navi:        #323C97;
+$brand-color-air:         #04A8DA;
+$brand-color-olive:       #556A2F;
+$brand-color-default:     #2E353D;
+$color-ash:               #e7eaec;
+
+$sidebar-color:           #2E353D;
+$alpha: 0.8;
+
+// theme brand color
+$brand-primary: $brand-color-olive;
+
+// navbar height
+//$navbar-height:                    72px !default;
+
+// navbar background
+$kt-navbar-default-bg:             rgba(255, 255, 255, 0.8);
+$kt-navbar-padding-vertical:       10px;
+
+$btn-brand-primary-color:              #ffffff;
+
+// primary font
+$font-family-base: 'open_sansregular' !default;
+
+// breadcrumb seperator
+$breadcrumb-separator: '\f105' ;
+
+// bootstrap select
+$color-red-error: rgb(185, 74, 72);
+$color-grey-arrow: rgba(204, 204, 204, 0.2);
+$width-default: 100%; // 3 960px-grid columns
+$zindex-select-dropdown: 1060; // must be higher than a modal background (1050)

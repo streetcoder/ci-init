@@ -1,0 +1,41 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "authors": [
+    "streetcoder <proshimul@yahoo.com>"
+  ],
+  "description": "Frontend Boilerplate is a starter html5 template development environment based on HTML5 Boilerplate, gulp, Bower, compass and Bootstrap Sass, that will accelerate the frontend development",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "HTML5 Boilerplate, gulp, Bower, compass and Bootstrap Sass"
+  ],
+  "license": "MIT",
+  "homepage": "streetcoder.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "modernizr": "~2.8.3"
+  },
+  "dependencies": {
+    "smartmenus": "~0.9.7",
+    "holderjs": "~2.9.0",
+    "bootstrap-select": "https://github.com/silviomoreto/bootstrap-select.git#~1.7.7",
+    "select2": "https://github.com/select2/select2.git#~4.0.1",
+    "select2-bootstrap-theme": "https://github.com/select2/select2-bootstrap-theme.git#~0.1.0-beta.4",
+    "awesome-bootstrap-checkbox": "https://github.com/flatlogic/awesome-bootstrap-checkbox.git#~0.3.5",
+    "bootstrap-datepicker": "https://github.com/eternicode/bootstrap-datepicker.git#~1.5.0",
+    "js-cookie": "~2.0.4",
+    "datatables.net-bs": "~1.10.10",
+    "tinymce": "~4.3.2",
+    "perfect-scrollbar": "~0.6.8"
+  }
+}

@@ -1,0 +1,210 @@
+/*
+  Mobile First CSS ready
+*/
+$mobile-nav-bar:200px;
+$desktop-nav-bar:250px;
+$mobile-menu-bar: 0;
+#wrapper {
+  padding-left: $mobile-menu-bar;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: $mobile-nav-bar;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: $mobile-nav-bar;
+  width: $mobile-menu-bar;
+  height: 93%;
+  margin-left: -$mobile-nav-bar;
+  overflow-y: auto;
+  background: $sidebar-color;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: $mobile-nav-bar;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: relative;
+  padding: 15px;
+
+}
+
+#wrapper.toggled #page-content-wrapper {
+  width: auto;
+  position: relative;
+  margin-right: 0;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/*  sidebar-wrapper */
+
+#sidebar-wrapper{
+
+  // first level
+  ul.sidebar-menu{
+    padding: 0;
+
+    li{
+      list-style: none;
+      padding: 10px;
+      background: darken($sidebar-color, 1%);
+      border-bottom: 1px solid darken($sidebar-color, 3%);
+      position: relative;
+      
+      &.active{
+        background: lighten($sidebar-color, 2%);
+      }
+      
+      &:hover{
+        background: lighten($sidebar-color, 5%);
+        cursor: pointer;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+      &.collapsed{
+
+        a{
+          .arrow:before {
+            font-family: FontAwesome;
+            content: "\f104";
+            position: absolute;
+            top: 10px;
+            right: 13px;
+            font-size: 12px;
+          }
+        }
+
+      }
+
+    }
+
+    a{
+      font-size: 12px;
+      outline: none;
+      text-decoration: none;
+      color: #FFFFFF;
+      font-size: 12px;
+      white-space: nowrap;
+      font-weight: bold;
+      display: block;
+
+      i{
+        width: 18px;
+      }
+
+      .arrow:before {
+        font-family: FontAwesome;
+        content: "\f107";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+
+      }
+
+    }
+
+    // second level
+    ul{
+      padding: 0;
+      li{
+        padding: 9px;
+        background: darken($sidebar-color, 5%);
+        border-bottom: 1px solid darken($sidebar-color, 7%);
+        &:hover{
+          background: lighten($sidebar-color, 3%);
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
+
+        &.active{
+          border-left: 0;
+          background: #1a1f25;
+        }
+        .arrow:before {
+          top: 8px;
+        }
+        &.collapsed{
+          a{
+            .arrow:before {
+              top: 8px;
+            }
+          }
+        }
+      }
+
+      a{
+        font-size: 11px;
+        i{
+          width: auto;
+          margin-right: 0;
+        }
+
+      }
+      
+      // third level
+      ul{
+        li{
+          padding-left: 20px;
+        }
+        ul{
+          li{
+            padding-left: 40px;
+          }
+        }
+      } // third level end
+
+    } // second level end
+
+  } // first level end
+}
+
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: $desktop-nav-bar;
+  }
+
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    width: $desktop-nav-bar;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+    display: block;
+  }
+
+}

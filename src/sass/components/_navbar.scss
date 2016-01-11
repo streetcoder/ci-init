@@ -1,0 +1,76 @@
+// Brand/project name
+.navbar-brand {
+  @media (max-width: $grid-float-breakpoint) {
+    margin-left: 12%;
+  }
+}
+
+// default toggle extended
+.navbar-toggle-secondary {
+  @extend .navbar-toggle;
+  border: none;
+
+  .icon-bar {
+    width: 15px;
+    margin-top: 2px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 2px;
+  }
+}
+
+// toggle menu for vertical
+.navbar-toggle-primary {
+  @extend .navbar-toggle;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 0;
+  padding: 7px 8px;
+  @media (min-width: $grid-float-breakpoint) {
+    display: block;
+  }
+}
+
+
+.navbar-side {
+  @extend .navbar-inverse;
+
+  .navbar-brand {
+    color: $brand-primary;
+    font-family: open_sansbold;
+    &:hover,
+    &:focus {
+      color: lighten($brand-primary, 5%);
+    }
+  }
+
+  //background-color: darken($brand-primary, 10%);
+  .navbar-toggle-secondary {
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      .icon-bar {
+        background-color: lighten($brand-primary, 5%);
+      }
+    }
+    .icon-bar {
+      background-color: $brand-primary;
+    }
+  }
+
+  .navbar-toggle-primary{
+    background: darken($brand-primary, 5%);
+    border-color: $brand-primary;
+    &:hover,
+    &:focus {
+      background-color: lighten($brand-primary, 5%);
+    }
+    .icon-bar {
+      background-color: $navbar-inverse-toggle-icon-bar-bg;
+    }
+  }
+
+}
+

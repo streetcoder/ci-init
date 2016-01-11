@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Author's Name: Shimul
+   email: proshimul@yahoo.com
+   web: streetcoder.net
+   ========================================================================== */
+
+/* mixins */
+
+/*  font-face*/
+@mixin font-face($font-family, $font-filename) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('#{$icon-font-path}#{$font-filename}.eot');
+    src: url('#{$icon-font-path}#{$font-filename}.eot?#iefix') format('embedded-opentype'),
+    url('#{$icon-font-path}#{$font-filename}.woff2') format('woff2'),
+    url('#{$icon-font-path}#{$font-filename}.woff') format('woff'),
+    url('#{$icon-font-path}#{$font-filename}.ttf') format('truetype'),
+    url('#{$icon-font-path}#{$font-filename}.svg##{$font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+/* border radius */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* circle */
+@mixin circle($size){
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+
+// image extended class
+.img-extended {
+  @extend .img-thumbnail;
+  background-color: #fff;
+  border: 1px solid $brand-primary;
+  border-color: rgba($brand-primary, $alpha);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/*  fontface*/
+
+// open sans
+@include font-face('open_sansbold', 'opensans-bold-webfont');
+@include font-face('open_sansbold_italic', 'opensans-bolditalic-webfont');
+@include font-face('open_sansextrabold', 'opensans-extrabold-webfont');
+@include font-face('open_sansextrabold_italic', 'opensans-extrabolditalic-webfont');
+@include font-face('open_sansitalic', 'opensans-italic-webfont');
+@include font-face('open_sanslight', 'opensans-light-webfont');
+@include font-face('open_sanslight_italic', 'opensans-lightitalic-webfont');
+@include font-face('open_sansregular', 'opensans-regular-webfont');
+@include font-face('open_sanssemibold', 'opensans-semibold-webfont');
+@include font-face('open_sanssemibold_italic', 'opensans-semibolditalic-webfont');
+
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+// font awesome list style
+ul.fac-list-tick{
+  li{
+    &:before{
+      content: "\f00c\00a0\00a0";
+      font-family: FontAwesome;
+    }
+  }
+}
+
+
+ul.fac-long-arrow{
+  li{
+    &:before{
+      content: "\f178\00a0\00a0";
+      font-family: FontAwesome;
+    }
+  }
+}
+
+// line behind text class
+
+.line-behind-text {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 5px;
+  &:before {
+    content:"";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+  }
+
+  span {
+    background: #fff;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-family: open_sansbold;
+    font-size: 18px;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    &:before{
+      border-top: 1px solid $brand-primary;
+    }
+    span{
+      font-size: 28px;
+    }
+  }
+}
+
+// no gutter
+.container-fluid.no-gutters {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row.no-gutters {
+  padding-right: 0;
+  padding-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// animated
+.fast {
+  -vendor-animation-duration: 1s;
+  -vendor-animation-delay: 0s;
+}
+.slow {
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 1s;
+}
+.reallyslow {
+  -vendor-animation-duration: 6s;
+  -vendor-animation-delay: 3s;
+}
+
+
+// breadcrumb is included fontawesome
+.breadcrumb {
+  background-color: $color-ash;
+  > li {
+
+    + li:before {
+      $nbsp: "\00a0";
+      content: "#{$breadcrumb-separator}#{$nbsp}";
+      font-family: FontAwesome;
+    }
+  }
+}
+
+// panel extended
+
+.panel-base {
+  @extend .panel-default;
+  @include panel-variant($panel-default-border, $panel-default-text, $color-ash, $panel-default-border);
+}
+
+// panel expandable
+.clickable{
+  cursor: pointer;
+}
+
+.panel-heading span {
+  margin-top: -20px;
+  font-size: 15px;
+}
+
+.label-block{
+  display: block;
+}
+
+#formHorizontal .form-control-feedback {
+  z-index: 100;
+}
+
+#formHorizontal .selectContainer .form-control-feedback {
+  right: -15px;
+}
+
+/*#formHorizontal .glyphicon-asterisk{
+  color: #D9534F;
+}*/
+
+.help-icon{
+  cursor: pointer;
+}
+
+// smaller scroll bar
+.ps-container > .ps-scrollbar-y-rail {
+  width: 2px;
+}
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  width: 2px;
+}
+
+// display scroll at top and bottom
+.wrapper1, .wrapper2{width: 100%; overflow-x: auto; overflow-y:hidden;}
+.wrapper1{height: 20px; }
+.wrapper2{height: 100%; }
+.div1 {width:950px; height: 20px; }
+.div2 {width:950px; height: 100%;}
+
+/*
+.hz-scroll-bar-top, .hz-scroll-bar-bottom{width: 100%; overflow-x: auto; overflow-y:hidden;}
+.hz-scroll-bar-top{height: 20px; }
+.hz-scroll-bar-bottom{height: 100%; }
+.scrollbar-inside-1 {width:950px; height: 20px; }
+.scrollbar-inside-2{width:950px; height: 100%;}
+*/

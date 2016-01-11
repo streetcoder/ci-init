@@ -1,0 +1,28 @@
+@import "../../bower_components/font-awesome/scss/font-awesome";
+@import "compass";
+@import "compass/css3";
+@import "common/_variables";
+
+// bower components
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../bower_components/select2/src/scss/core";
+@import "../../bower_components/select2-bootstrap-theme/src/select2-bootstrap";
+@import "../../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
+@import "../../bower_components/datatables.net-bs/css/dataTables.bootstrap.css";
+@import "../../bower_components/bootstrap-select/dist/css/bootstrap-select.css";
+@import "../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+@import "../../bower_components/perfect-scrollbar/css/perfect-scrollbar.css";
+// end bower components
+
+@import "common/_global";
+@import "components/_formValidation";
+@import "components/_navbar";
+@import "components/_dropdowns";
+@import "components/_buttons";
+@import "components/_navs";
+@import "layouts/_header";
+@import "layouts/_dashboard";
+@import "layouts/_page";
+@import "layouts/_footer";
+
+
